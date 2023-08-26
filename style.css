@@ -1,0 +1,168 @@
+#nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#nav1{
+    width: 20%;
+}
+#nav2{
+    width: 58%;
+}
+#nav3{
+    width: 20%;
+}
+#nav2 > div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 50px;
+    height: 40px;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+#nav1 > a > img{
+    width: 170px;
+}
+#nav2 > div > input{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: none;
+    padding-left: 10px;
+    height: 38px;
+    width: 80%;
+    box-shadow: none;
+    outline: none;
+}
+#nav3 > i{
+    float: right;
+    margin-left: 25px;
+}
+#cat{
+    display: flex;
+}
+#cat > div > a{
+    text-decoration: none;
+    color: black;
+}
+#cat > div > a > img{
+    width: 20px;
+    height: 20px;
+    filter: brightness(0,5);
+}
+#cat > div:first-child{
+    width: 20%;
+}
+#cat > div:last-child{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+#sel{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 15pt;
+    color: white;
+    font-weight: 500;
+}
+#dis-text{
+    text-decoration: none;
+    color: black;
+}
+#dis-text > img{
+    width: 20px;
+    height: 20px;
+    filter: brightness(0,5);
+}
+#dis-text:hover{
+    cursor: not-allowed
+}
+#un-text:hover{
+    text-decoration: underline;
+    text-decoration-color: #149ddd;
+}
+body{
+    background-color: #f2f4f5;
+}
+#navi{
+    background-color: white;
+    padding: 10px;
+}
+#main{
+    display: flex;
+}
+#main1{
+    width: 25%;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: orange; 
+  border-radius: 10px;
+}
+#accordion-item > h2 >button{
+    background-color: #f2f4f5;
+}
+#main2{
+    width: 75%;
+}
+.accordion-item > h2 > button > img{
+    width: 20px;
+}
+#gut-bottom{
+    width: 100%;
+    background-color: #c9cbcc;
+    height: 6vh;
+}
+.ximi{
+    display: flex;
+    flex-direction: column;
+}
+#mmn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+@media screen and (max-width: 991px) {
+    #main1{
+        display: none;
+    }
+    #main2{
+        width: 100%;
+    }
+    #lll{
+        display: none;
+    }
+}
+#pol > img{
+    width: 25px;
+}
+#kmm{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#gutters{
+    background-color: #f2f4f5;
+}
+
+
+
+@media screen and (max-width: 991px) {
+    #help{
+        display: none;
+    }
+}

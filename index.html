@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone-TINFIS</title>
+    <link rel="icon" href="data:image/png;base64,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">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="w-100 bg-dark ps-3 pe-3 navbar">
+        <div class="d-flex align-itams-center">
+            <div id="lll">
+                <i class="fa-solid fa-location-dot text-warning fs-5"></i>
+                <span class="text-white">Toshkent shahar, Toshkent viloyati</span>
+            </div>
+            <div class="d-flex align-itams-center ms-5">
+                <i class="fa-solid fa-headset text-warning fs-4"></i>
+                <span class="text-white d-flex align-itams-center ms-2">+998 <h1 class="fs-4 ms-2">71 209 03 33</h1></span>
+            </div>
+        </div>
+        <div class="d-flex align-itams-center">
+            <a class="text-white text-decoration-none" href="">Sotuvchining kabineti</a>
+            <a id="help" class="text-white text-decoration-none ms-3 d-flex align-itams-center d-none d-md-flex" href=""><i class="fa-regular fa-circle-question text-warning fs-4"></i> <span class="ms-2">Yordam</span></a>
+            <i class="fa-solid fa-bars d-md-none text-warning mt-2 ms-2"></i>
+            <select id="sel" class="ms-3 d-none d-md-flex" name="" id="">
+                <option value="">UZ</option>
+                <option value="">RU</option>
+            </select>
+        </div>
+    </div>
+    <div id="navi" class="sticky-top">
+        <div id="nav" class="container-fluid mt-2">
+            <div id="nav1">
+                <a href=""><img class="img-fluid" src="https://main--splendorous-druid-f1e174.netlify.app/assets/Logo.svg" alt=""></a>
+            </div>
+            <div id="nav2">
+                <div class="d-none d-md-flex">
+                    <input type="text" placeholder="O'zingiz hohlagan narsani qidiring...">
+                    <i class="fa-solid fa-magnifying-glass fs-4"></i>
+                </div>
+            </div>
+            <div id="nav3">
+                <i class="fa-solid fa-magnifying-glass d-md-none"></i>
+                <i class="fa-regular fa-heart fs-3 "></i>
+                <i class="fa-solid fa-bag-shopping fs-3 d-none d-md-flex"></i>
+                <i class="fa-regular fa-user fs-3 d-none d-md-flex"></i>
+            </div>
+        </div>
+        <div id="cat" class="container-fluid mt-2 d-none d-md-flex">
+            <div>
+                <a href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/catalogBlack.svg" alt=""> Kategoriyalar</a>
+            </div>
+            <div>
+                <a id="un-text" href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/percent.svg" alt=""> Aksiyalar</a>
+                <a id="un-text" href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/magazin.svg" alt=""> Do'konlar</a>
+                <a id="un-text" href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/star.svg" alt=""> Brendlar</a>
+                <span id="dis-text" href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/airplane.svg" alt=""> Avia chiptalar</span>
+                <span id="dis-text" href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/food.svg" alt=""> Taomlar</span>
+                <span id="dis-text" href=""><img src="https://main--splendorous-druid-f1e174.netlify.app/assets/flower.svg" alt=""> Gullar</span>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="mt-3">
+        <div id="main1">
+            <div class="accordion accordion-flush overflow-auto container-fluid " style="height: 440px;" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      <img src="https://back.tinfis.uz/public/uploads/all/n3Bd942KHNUu9jDbqViGvUwsHlElZd2P0ezcI6Ep.svg" alt="">
+                        <span class="ms-2">Elektronika</span>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      <img src="https://back.tinfis.uz/public/uploads/all/s6RSXKfMUTyBC1vfVOQm4uwZAbxrnDCnMbd8gdno.svg" alt="">
+                      <span class="ms-2">Maishiy texnika</span>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      <img src="https://back.tinfis.uz/public/uploads/all/jqvkX21uSzYMg06wNcnZGQHXtXlSWiLCSYCvT2A4.svg" alt="">
+                      <span class="ms-2">Oziq ovqatlar</span>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/dhMtMgA2dZSvD8mKHT5C8iJQ1OYWaK6JQ2M5XYLH.svg" alt="">
+                        <span class="ms-2">Ayollar uchun</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/4ijca4JXjIXbBFyMXiG8j6NQFuvDzGh2QlV3r9hC.svg" alt="">
+                        <span class="ms-2">Erkaklar uchun</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/KkUY13fiMOSd2oGg3lCHGU4NxRpr1Z0q9k60fQD9.svg" alt="">
+                        <span class="ms-2">Bolalar uchun</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/xMlmdSvMYqbPCLkzM1TWeUTacmLdklnt2SSZAbhK.svg" alt="">
+                        <span class="ms-2">Poyapzal</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/5PgXoZLxL5NHZm0zhcR3VTS8iFdXQ9VQXcJK2qb0.svg" alt="">
+                        <span class="ms-2">Aksessuarlar</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/hRMoYj7nO8QCH2S4yUv2CiDFltODrRVgNjUc8A5S.svg" alt="">
+                        <span class="ms-3">Sport mollari</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/SXGEIB4tHygcsFQc7tVGi8aGjxRc9Jvdf32DX3Lq.svg" alt="">
+                        <span class="ms-2">Go'zallik mollari</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/HLyVy3fqBHtohh348XjKg7yQtHQFZBrfRq3spi0p.svg" alt="">
+                        <span class="ms-2">Mebellar</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/GjlfB0MyvfXjrftkOGidrZBoBmEBXZzSDZyYqhYg.svg" alt="">
+                        <span class="ms-2">UY jihozlari</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/SGOxjXmh9QnVmZHfdijE4V7qvzJwYtEpwO0i0ae9.svg" alt="">
+                        <span class="ms-2">Bog' va dala hovli uchun</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/EwFCDbmCJS1bSm6AkyeDqgAO48lcjxIQkMDHvXmW.svg" alt="">
+                        <span class="ms-2">Quruish mollari</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/tk33jcFaIpfdf2GmlIEjpkiCfk2kxL1bYRpt2pzb.svg" alt="">
+                        <span class="ms-2">Avto tovarlar</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/rHWmOqjPbkAJMkx0eTHwq2AviNcLfKEGUc0D2iQC.svg" alt="">
+                        <span class="ms-2">Kanstovarlar</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/M9Fjbjjspvn6edtSr6MtVgVAcHiIqbn9pEo6ODPv.svg" alt="">
+                        <span class="ms-2">Dorixona</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <img src="https://back.tinfis.uz/public/uploads/all/6kXoGNFs8ESHWCqXy2U6Ngeg6A0emC6EAxoucZLp.svg" alt="">
+                        <span class="ms-2">Zargarlik buyumlari</span>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+        <div id="main2" class="container">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://back.tinfis.uz/public/uploads/all/FdnkaSBmULqdNyKLsqg2we2Yc1ji9g02xOSHcqzQ.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://back.tinfis.uz/public/uploads/all/zGdEEWCIn6LtC9mQcJCGZzqjAMnBMQQGxF7Rn9Jm.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://back.tinfis.uz/public/uploads/all/f1PYQAtVci0OhSbulyTQFV1fh0xG43QGt0daOsVd.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://back.tinfis.uz/public/uploads/all/AfrmHGSvtz0BY7K90hIGYphPp1pd6WoYL0vMYcU4.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://back.tinfis.uz/public/uploads/all/7jueYgyNSrLWCM4qYE1ZOHq8hGHHyY1oy8UUc93n.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://back.tinfis.uz/public/uploads/all/nCunlpYxGtSTnSm6xhL5wx6hefKSZgCngkGkdN4K.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    <div class="container-fluid px-4 text-center mt-3 d-none d-md-flex">
+      <div class="row gx-5">
+        <div class="col">
+          <div id="gutters" class="p-2 border border-warning rounded-3">Do'konlar</div>
+        </div>
+        <div class="col">
+          <div id="gutters" class="p-2 border border-warning rounded-3">Brendlar</div>
+        </div>
+        <div class="col">
+          <div id="gutters" class="p-2 border border-warning rounded-3">Aksiyalar</div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar ps-3 pe-3 mt-5">
+      <div class="d-flex align-itams-center">
+        <h1>Yangi mahsulotlar</h1>
+        <span class="ms-3">296 mahsulotlar</span>
+      </div>
+      <div>
+        <a href=""><b>Barchasi</b></a>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2F65bcXghTx7iYmvLTjfDshWmO2zeLleVpBiQoVHuD.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Oliy navli "Lazer" guruchi</a>
+            <p class="text-warning fw-bold"><span class="fs-4">25 300</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">2 677</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2FEMuF70dvLrQF0H4LONq9MQZtSaCXnHVrHaMAOUHu.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Alanga Guruchi</a>
+            <p class="text-warning fw-bold"><span class="fs-4">15 000</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">1 587</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2FyZdPBzduJm8IDeWWv2GfbCpzTpqbx3oFCwG1HKJY.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Devzira guruchi</a>
+            <p class="text-warning fw-bold"><span class="fs-4">27 600</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">2 921</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2FyZ9vVwARkVh5qjACLBfopbPVgxBdzwztR0XugnGs.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Yasmir</a>
+            <p class="text-warning fw-bold"><span class="fs-4">23 000</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">2 434</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2FckrZMsN7ZlVFZetDoMndMYaEyR9a1EP18gPoote8.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Grechka</a>
+            <p class="text-warning fw-bold"><span class="fs-4">20 700</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">2 190</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 ms-5 px-4 text-center">
+      <div class="row gy-5">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+         <div>
+          <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/emszzncOvQ6MZ01y4GGS1OimcKiZ3hiOtR6Izxq6.jpg" alt="">
+         </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded"src="https://back.tinfis.uz/public/uploads/all/1AAzyZkzszzzpxMWpFDCWqVNLuMfvAOBYI3VDUex.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/fR6ixo1tb19sqCaBw6Gg5ilJiIqoCexO8vgy0ZMP.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/eWKlfKMil47rchTSZ9PfMox1YQeL8h3Quv7tdO4V.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/8vdcUBUFMKERHwjF65yj7PHAYtGiYd3Ah8foJSMT.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/67GACy5AiDshRf3MHsRSOPopfDxuM84r9MFb5s5j.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar ps-3 pe-3 mt-5">
+      <div class="d-flex align-itams-center">
+        <h1>Mashhur do'konlar</h1>
+      </div>
+      <div>
+        <a href=""><b>Barchasi</b></a>
+      </div>
+    </div>
+    <div class="container px-4 text-center">
+      <div class="row gx-5">
+        <div class="col">
+         <div>
+          <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/o8QbTLHgVibNDhMI5AWrE527jxLadVXMO4AfbJJ2.jpg" alt="">
+         </div>
+        </div>
+        <div class="col">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/khfiwE09hXeZxmYUDmUOxycBci2Js7WF3F0dyX6Q.png" alt="">
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/arLCysIUArGLNIrzYNlg13dF6eLZIcWYjKDN7eWB.jpg" alt="">
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/FSvbKf9IVRD7QxkdwcM1Ktdz1zOy1UpkHt5suKAK.jpg" alt="">
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/i0uZNQgqRT5qIrScQTVpbtjHpTdXGLMsBeieZ3iU.jpg" alt="">
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/RLMubEHJxRWyfjYkuVm9CLEqBsnj9Cx2QMEXkCOV.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 ms-5 px-4 text-center">
+      <div class="row gy-5">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+         <div>
+          <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/voxjcYdRtMknYTqdMmE5VMikPTyTCkuv8bYADg9A.jpg" alt="">
+         </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded"src="https://back.tinfis.uz/public/uploads/all/5ZIVVMgVJWazuIJApckgR2ZwRGm8fGz2CLOHOReq.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/xSfnkRQzXKIpTbJ3llIDGNB7WHSun42Wllkts9ek.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/oSRPv8wVVCPJUx6d4PjS709nB4bkhru39CG4tRg8.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/DKbkIfMTdOJLFzTnYCJ7k8nBMHK6u6KFTnfVKAln.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/hH8p41pAYP0e1kmUR3m7d2c8ZSSIt5h9XoS64IVH.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar ps-3 pe-3 mt-5">
+      <div class="d-flex align-itams-center">
+        <h1>Mashhur mahsulotlar</h1>
+        <span class="ms-3">360 mahsulotlar</span>
+      </div>
+      <div>
+        <a href=""><b>Barchasi</b></a>
+      </div>
+    </div>
+     <div class="container text-center">
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5Ca22d275e21d5bd0312cebc2c.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Sport shortiklari</a>
+            <p class="text-warning fw-bold"><span class="fs-4">249 000</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">26 352</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5Ca4733eefd87ccc8595f74fb6.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Tana himoyasi</a>
+            <p class="text-warning fw-bold"><span class="fs-4">700 000</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">74 083</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5C78ca94716bd8714f1e7f935c.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Darvozabon qo'lqoplari</a>
+            <p class="text-warning fw-bold"><span class="fs-4">300 000</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">31 750</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5Ca8c701fcf2889005cc2c90ed.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">USB Flash Drive Kingston DTSE9...</a>
+            <p class="text-warning fw-bold"><span class="fs-4">79 100 so'm</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">8 381</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5C80c2e3ce68a6f620878daa71.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Shinoprovod</a>
+            <p class="text-warning fw-bold"><span class="fs-4">155 000</span> so'm</p>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">16 404</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 ms-5 px-4 text-center">
+      <div class="row gy-5">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+         <div>
+          <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/H3eTTlK5F7q0NI1FLnvBif8INs6dlqCrWWOzNHtE.jpg" alt="">
+         </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded"src="https://back.tinfis.uz/public/uploads/all/eWKlfKMil47rchTSZ9PfMox1YQeL8h3Quv7tdO4V.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/2uqoR14NnUECI6j5MmVagFPXz83K480hQecHJAZp.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/67GACy5AiDshRf3MHsRSOPopfDxuM84r9MFb5s5j.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/8vdcUBUFMKERHwjF65yj7PHAYtGiYd3Ah8foJSMT.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/B71ifj6XDgkpQf8raFjE1JaKGkYL7yAGoEJ4HKva.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar ps-3 pe-3 mt-5">
+      <div class="d-flex align-itams-center">
+        <h1>Tavsiya etilgan</h1>
+        <span class="ms-3">494 mahsulotlar</span>
+      </div>
+      <div>
+        <a href=""><b>Barchasi</b></a>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5C0cb5d6ec3d049c5988aef231.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Ballu BFH/S-10 isitgichi</a><br>
+            <span><s>310 000</s>254 400 so'm</span>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">26 924</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%5Call%5C045d5b0f0f28a677eb886461.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Isitgich Electrolux EOH/M-5221N</a><br>
+            <span><s>1 040 000</s>832 000 so'm</span>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">88 053</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2FHmgBSRRMElb5yCBrZMdtaeEtC4h1ho2f8qklP3qG.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Suv Isitgich Shivaki SHD WH...</a><br>
+            <span><s>2 309 500</s>1 732 100 so'm</span>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">183 313 </span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2FZpXXdpXvKBJvO9JbdqfqLaCSpVBioHCjv1pQiqrK.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Gaz Plitasi Shivaki 6404-G</a><br>
+            <span><s>3 743 800</s>2 807 800 so'm</span>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">297 158</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-block">
+          <div class="bg-white">
+            <img class="img-fluid" src="https://tinfis.uz/_next/image?url=https%3A%2F%2Fback.tinfis.uz%2Fpublic%2Fuploads%2Fall%2F8N3LRv9ovyc1ZcQi5oLFX6DzurH1uCx9TV2Q3Gkw.jpg&w=1920&q=75" alt="">
+            <a class="text-decoration-none text-center text-primary-emhasis" href="">Yarim Avtomatik Kir Yuvish M...</a><br>
+            <span><s>2 006 000</s>1 404 200 so'm</span>
+            <div id="gut-bottom">
+              <p class="text-primary-emhasis fw-semibold"><span class="fs-4">148 611</span> so'm * 12 oy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 ms-5 px-4 text-center">
+      <div class="row gy-5">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+         <div>
+          <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/Ihw5F5ex34vrPhW3badUkiSAlQzFDSNhK9cRYreM.jpg" alt="">
+         </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded"src="https://back.tinfis.uz/public/uploads/all/H3eTTlK5F7q0NI1FLnvBif8INs6dlqCrWWOzNHtE.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/btptplQFW0WyldVY6pDAsUtIStt5HFGu2zkCVwen.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/JgMUmwavldreVvAJMTsEeR54Tw9pVtO6biIKGZu8.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/7HHQDqb5D1GGHg0nrvPHJllQ0m837ZnmgJR2husK.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div>
+            <img class="img-fluid rounded" src="https://back.tinfis.uz/public/uploads/all/v3PPaVw2NifSP9B18yDOcRdmoj8m1iPlLO2ImQCw.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 ms-5">
+      <h1>Onlayn xarid qilish qulay va foydali.</h1>
+      <p class="mt-3">«TINFIS» Marketpleysi keng assortimentdagi mahsulotlarni xarid qilishni taklif qiladi. Onlayn gipermarketimizda siz har qanday mahsulotni topishingiz mumkin - oziq-ovqat, elektronika, maishiy texnika, kiyim-kechak, poyabzal, ish yuritish buyumlari va boshqalar.</p>
+    </div>
+    <div class="d-flex bg-white ms-5 justify-content-around d-none d-md-flex">
+      <div class="mt-4">
+        <img width="180" height="60" class="img-fluid ms-5" src="https://tinfis.uz/img/Logo.svg" alt="">
+        <p class="mt-3 ms-5">Mobil ilovamizni yuklab oling</p>
+        <img class="mt-2" src="https://tinfis.uz/_next/image?url=%2Fimg%2Fappstore.png&w=256&q=75" alt="">
+        <img class="mt-2" src="https://tinfis.uz/_next/image?url=%2Fimg%2Fgoogle-play.png&w=256&q=75" alt="">
+        <p class="opasity-75 mt-4 ms-5">Bizni ijtimoiy tarmoqlarda toping</p>
+        <img class="mt-2 ms-5" src="https://tinfis.uz/img/youtobe.png" alt="">
+        <img class="mt-2 " src="https://tinfis.uz/img/insta.png" alt="">
+        <img class="mt-2 " src="https://tinfis.uz/img/facebook.png" alt="">
+        <img class="mt-2 " src="https://tinfis.uz/img/telegram.png" alt="">
+      </div>
+      <div class="ms-5">
+        <h3>Xaridorlar</h3>
+        <p>Buyurtmani qanday qilish kerak</p>
+        <p>Tovarlarni qaytarish</p>
+        <p>Tovarlarni yetkazib berish</p>
+        <p>Ommaviy oferta</p>
+        <p>Savol va Javoblar</p>
+        <p>Pulni qaytarish</p>
+        <p>Tovarlar uchun to'lov</p>
+        <button class="bg-warning btn" id="lol">Sotuvchining kabineti</button>
+      </div>
+      <div class="ms-5">
+        <h3>Hamkorlar uchun</h3>
+        <p>TINFISda savdo qiling</p>
+        <p>Qabul qilish shohobchasini oching</p>
+        <p>Yuk tashuvchilar uchun</p>
+        <h3>Kampaniya</h3>
+        <p>Bizning kontaktlarimiz</p>
+        <p>Bizning bo'sh ish o'rinlarimiz</p>
+        <p>Platforma haqida</p>
+      </div>
+      <div class="ximi pb-5">
+        <h2>Platforma haqida</h2>
+        <img width="40" class="img-fluid mt-3 mx-auto" src="https://tinfis.uz/img/footer-headphone.png" alt="">
+        <span class="fw-bold fs-5 mt-4 ms-4">+998 71 209 03 33</span>
+        <img width="40" class="mx-auto mt-3" src="https://tinfis.uz/img/footer-mail.png" alt="">
+        <a class="mt-3 text-center" href="">info@tinfis.uz</a>
+        <div class="mt-4 mx-auto">
+          <img width="80" class="img-fluid" src="https://tinfis.uz/img/humo.png" alt="">
+        <img width="80" class="img-fluid" src="https://tinfis.uz/img/uzcard.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div id="mmn" class=" d-none d-md-flex justify-content-center">
+      <h5 class="text-center">© 2021 Barcha huquqlar himoyalangan. O'zbekiston bo'ylab yetkazib beriladi</h5>
+    </div>
+    <div id="kmm" class="d-md-none">
+      <div id="pol">
+        <img src="https://splendorous-druid-f1e174.netlify.app/assets/sm-home-active.svg" alt="">
+        <a href="">Asosiy</a>
+      </div>
+      <div id="pol">
+        <img src="https://splendorous-druid-f1e174.netlify.app/assets/sm-category.svg" alt="">
+        <a href="">Katalog</a>
+      </div>
+      <div id="pol">
+        <img src="https://splendorous-druid-f1e174.netlify.app/assets/tinfis-logo.svg" alt="">
+      </div>
+      <div id="pol">
+        <img src="https://splendorous-druid-f1e174.netlify.app/assets/cart.svg" alt="">
+        <a href="">Savat</a>
+      </div>
+      <div id="pol">
+        <img src="https://splendorous-druid-f1e174.netlify.app/assets/profile.svg" alt="">
+        <a href="">Profil</a>
+      </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>
